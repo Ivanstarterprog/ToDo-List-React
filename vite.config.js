@@ -4,17 +4,13 @@ import path from "path";
 
 export default defineConfig({
   plugins: [react()],
-  server: {
-    watch: {
-      usePolling: true,
-    },
-  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),
       "@entities": path.resolve(__dirname, "src/entities"),
       "@styles": path.resolve(__dirname, "src/shared/styles"),
       "@components": path.resolve(__dirname, "src/components"),
+      "@assets": path.resolve(__dirname, "src/assets"),
     },
   },
 });

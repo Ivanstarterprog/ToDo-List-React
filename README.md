@@ -1,16 +1,70 @@
-# React + Vite
+# To Do List React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## О проекте
 
-Currently, two official plugins are available:
+### Описание
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Данный проект представляет из себя небольшое учебное приложения типа ToDo, переписанное с использованием библиотеки React
 
-## React Compiler
+### Использования проекта
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Для того чтобы открыть проект нужно выполнить команду "npm run dev"
 
-## Expanding the ESLint configuration
+## Эстимация времени на выполнение проекта
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Компоненты React
+
+#### Основные компоненты
+
+- [ ] **App** (главный компонент) ~ 30 минут
+- [ ] **TaskList** (список задач) ~ 20 минут
+- [ ] **TaskCard** (карточка задачи) ~ 45 минут
+- [ ] **AddTaskForm** (форма добавления задачи) ~ 35 минут
+- [ ] **NoTasksCard** (компонент "нет задач") ~ 15 минут
+
+#### Модальные окна
+
+- [ ] **Modal** (базовый компонент модальных окон) ~ 25 минут
+- [ ] **ConfirmModal** (подтверждение удаления) ~ 30 минут
+- [ ] **EditModal** (редактирование задачи) ~ 40 минут
+- [ ] **ShareModal** (поделиться задачей) ~ 25 минут
+
+### Управление состоянием (State Management)
+
+#### States в компоненте App
+
+- [ ] Состояние задач (tasks) ~ 15 минут
+- [ ] Состояния модальных окон ~ 20 минут
+- [ ] Состояние активной задачи ~ 15 минут
+- [ ] Состояние отображаемых кнопок задач ~ 20 минут
+
+#### States в компонентах форм
+
+- [ ] Состояния формы добавления задачи ~ 15 минут
+- [ ] Состояния формы редактирования задачи ~ 15 минут
+
+### Эффекты (useEffect)
+
+- [ ] Загрузка задач из localStorage при открытии страницы ~ 20 минут
+- [ ] Сохранение задач в localStorage при изменении ~ 15 минут
+- [ ] Обработка кликов вне карточек задач ~ 25 минут
+
+### Основные функции-обработчики
+
+- [ ] Функция добавления задачи (addTask) ~ 20 минут
+- [ ] Функция удаления задачи (deleteTask) ~ 25 минут
+- [ ] Функция редактирования задачи (editTask) ~ 30 минут
+- [ ] Функция переключения кнопок задачи (toggleTaskButtons) ~ 20 минут
+- [ ] Функции работы с localStorage ~ 25 минут
+
+### Интеграция существующих стилей
+
+- [ ] Стилизация компонентов ~ 45 минут
+- [ ] Адаптивная верстка для мобильных устройств ~ 35 минут
+- [ ] Анимации и hover-эффекты ~ 25 минут
+
+### Тестирование и отладка
+
+- [ ] Тестирование добавления/удаления задач ~ 30 минут
+- [ ] Тестирование модальных окон ~ 25 минут
+- [ ] Тестирование работы с localStorage ~ 20 минут

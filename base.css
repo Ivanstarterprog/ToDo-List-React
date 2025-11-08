@@ -1,4 +1,4 @@
-@import "src\shared\styles\vars.css";
+@import "@/shared/styles/vars.css";
 
 * {
   box-sizing: border-box;
@@ -6,7 +6,7 @@
 
 @font-face {
   font-family: Inter;
-  src: url("src/assets/fonts/Inter-variablefont_opsz\,wght.ttf");
+  src: url("@/assets/fonts/Inter-variablefont_opsz\,wght.ttf");
 }
 
 html {
@@ -48,7 +48,8 @@ button {
   background-color: var(--main-bg-color);
   color: var(--text-color);
   box-shadow: none;
-  border: 2px solid var(--mark-color);
+  border-style: solid;
+  border-color: var(--mark-color);
   &:hover {
     background-color: var(--light-bg-color);
     border-color: var(--mark-hover-color);

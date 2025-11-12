@@ -1,6 +1,6 @@
 import styles from "./NoTasksCard.module.css";
 
-export function NoTasksCard() {
+export const NoTasksCard = () => {
   return (
     <div id="noTasksCard" className={styles.tasks__no_tasks}>
       <div className={styles.tasks__no_task__separator}></div>
@@ -8,4 +8,4 @@ export function NoTasksCard() {
       <div className={styles.tasks__no_task__separator}></div>
     </div>
   );
-}
+};

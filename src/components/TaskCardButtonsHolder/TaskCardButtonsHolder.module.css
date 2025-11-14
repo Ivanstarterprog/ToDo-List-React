@@ -1,0 +1,6 @@
+.task__card__buttons_container {
+  display: none;
+  flex-direction: row;
+  gap: 8px;
+  justify-content: end;
+}

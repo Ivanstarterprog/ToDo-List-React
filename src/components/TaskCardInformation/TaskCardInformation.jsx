@@ -1,5 +1,5 @@
 import styles from "./TaskCardInformation.module.css";
-export const TaskCardInformation = (task) => {
+export const TaskCardInformation = ({ task }) => {
   return (
     <div className={styles.task__card__data}>
       <h3 className={styles.task__card__title}> {task.title} </h3>

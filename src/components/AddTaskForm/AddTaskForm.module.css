@@ -1,0 +1,27 @@
+.add__task {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  width: 400px;
+  @media (max-width: 480px) {
+    width: 100%;
+  }
+  justify-content: space-between;
+}
+.add__task__data {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 6px;
+}
+.add__task__top_row {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+}
+
+.add__deadline__button {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+}

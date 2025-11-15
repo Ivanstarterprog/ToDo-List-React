@@ -56,3 +56,17 @@ button {
     cursor: pointer;
   }
 }
+
+input,
+textarea {
+  width: 100%;
+  border: 1px solid var(--mark-color);
+  border-radius: 4px;
+  background-color: var(--light-bg-color);
+  color: var(--text-color);
+  font-size: var(--input-text-size);
+  line-height: 18px;
+  padding: 6px;
+  align-self: stretch;
+  justify-self: stretch;
+}

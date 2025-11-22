@@ -4,7 +4,7 @@ import Task from "@entities/task";
 import styles from "./AddTaskForm.module.css";
 import calendarImage from "@assets/img/calendar.svg";
 
-export const AddTaskForm = () => {
+export const AddTaskForm = ({ onAddTask }) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [deadline, setDeadline] = useState("");
@@ -19,7 +19,7 @@ export const AddTaskForm = () => {
     if (deadline) {
       newTask.setDeadLineEnd(deadline);
     }
-    console.log(newTask);
+    onAddTask(newTask);
     setTitle("");
     setDescription("");
   };

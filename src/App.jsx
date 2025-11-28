@@ -1,35 +1,39 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
+import ConfirmButtons from "@components/ConfirmButtons";
+import AddTaskForm from "@components/AddTaskForm";
+import Task from "@entities/task";
+import { useEffect, useState } from "react";
+import TaskList from "./components/TaskList";
 function App() {
-  const [count, setCount] = useState(0)
+  const [tasks, setTasks] = useState([]);
+
+  useEffect(() => {
+    const savedTasks = localStorage.getItem("tasks");
+    if (savedTasks.length === 0) return;
+
+    const tasksArray = JSON.parse(savedTasks);
+    const taskInstances = tasksArray.map((item) => Task.objectToTask(item));
+    setTasks(taskInstances);
+    if (tasksArray.length > 0) {
+      const maxId = Math.max(...tasksArray.map((task) => task.id));
+      Task.setNextId(maxId);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (tasks.length === 0) return;
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
+
+  const handleAddTask = (newTask) => {
+    setTasks((prevTasks) => [...prevTasks, newTask]);
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <main>
+      <TaskList tasks={tasks} />
+      <AddTaskForm onAddTask={handleAddTask} />
+    </main>
+  );
 }
 
-export default App
+export default App;

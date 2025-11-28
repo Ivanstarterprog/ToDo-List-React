@@ -1,6 +1,12 @@
-.add__task__button {
-  width: 70px;
-  height: 70px;
-  border-width: 2px;
+.delete__task__button {
+  height: 20%;
+  aspect-ratio: 1 / 1;
   border-radius: 8px;
+  z-index: 3;
+  img {
+    pointer-events: none;
+    width: 75%;
+    aspect-ratio: 1/1;
+    transform: rotate(45deg);
+  }
 }

@@ -1,10 +1,10 @@
-import styles from "./AddTaskButton.module.css";
+import styles from "./DeleteTaskButton.module.css";
 import unionImage from "@assets/img/union.svg";
 
-export const DeleteTaskButton = ({ taskID }) => {
+export const DeleteTaskButton = () => {
   return (
     <button className={styles.delete__task__button}>
-      <img img src={unionImage} alt="Удалить" />
+      <img src={unionImage} alt="Удалить" />
     </button>
   );
 };

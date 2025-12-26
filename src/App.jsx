@@ -28,9 +28,15 @@ function App() {
     setTasks((prevTasks) => [...prevTasks, newTask]);
   };
 
+  const handleDeleteTask = (taskToBeDeleted) => {
+    setTasks((prevTasks) =>
+      prevTasks.filter((task) => task.id !== taskToBeDeleted.id)
+    );
+  };
+
   return (
     <main>
-      <TaskList tasks={tasks} />
+      <TaskList tasks={tasks} onDeleteTask={handleDeleteTask} />
       <AddTaskForm onAddTask={handleAddTask} />
     </main>
   );

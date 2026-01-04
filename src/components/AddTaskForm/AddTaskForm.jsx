@@ -6,7 +6,7 @@ import calendarImage from "@assets/img/calendar.svg";
 
 export const AddTaskForm = ({ onAddTask }) => {
   const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
+  const [body, setBody] = useState("");
   const [deadline, setDeadline] = useState("");
 
   const handleSubmit = (e) => {
@@ -14,14 +14,15 @@ export const AddTaskForm = ({ onAddTask }) => {
 
     if (!title.trim()) return;
 
-    const newTask = new Task(title.trim(), description.trim());
-
+    const newTask = new Task();
+    newTask.setTaskTitle(title.trim());
+    newTask.setTaskBody(body.trim());
     if (deadline) {
       newTask.setDeadLineEnd(deadline);
     }
     onAddTask(newTask);
     setTitle("");
-    setDescription("");
+    setBody("");
   };
 
   return (
@@ -35,14 +36,11 @@ export const AddTaskForm = ({ onAddTask }) => {
             placeholder="Заголовок..."
             required
           />
-          <button className={styles.add__deadline__button}>
-            <img src={calendarImage} alt="" />
-          </button>
         </div>
         <input
           type="text"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
+          value={body}
+          onChange={(e) => setBody(e.target.value)}
           placeholder="Краткое описание..."
         />
       </div>

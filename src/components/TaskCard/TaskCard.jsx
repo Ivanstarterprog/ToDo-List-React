@@ -3,7 +3,7 @@ import TaskCardInformation from "@components/TaskCardInformation";
 import DeleteTaskButton from "@components/DeleteTaskButton";
 import TaskCardButtonsHolder from "@components/TaskCardButtonsHolder";
 import { useState, useRef, useEffect } from "react";
-export const TaskCard = ({ task, onDeleteTask }) => {
+export const TaskCard = ({ task, onDeleteTask, onEditTask }) => {
   const [isButtonsVisible, setIsButtonsVisible] = useState(false);
   const cardRef = useRef(null);
 
@@ -17,6 +17,11 @@ export const TaskCard = ({ task, onDeleteTask }) => {
   const handleDeleteTask = (e) => {
     e.stopPropagation();
     onDeleteTask(task);
+  };
+
+  const handleEditTask = (e) => {
+    e.stopPropagation;
+    onEditTask(task);
   };
 
   useEffect(() => {
@@ -40,6 +45,7 @@ export const TaskCard = ({ task, onDeleteTask }) => {
         </div>
       </div>
       <TaskCardButtonsHolder
+        onEditClick={handleEditTask}
         isVisible={isButtonsVisible}
       ></TaskCardButtonsHolder>
     </div>

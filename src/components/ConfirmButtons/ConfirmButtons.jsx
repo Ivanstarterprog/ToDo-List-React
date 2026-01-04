@@ -8,11 +8,11 @@ export const ConfirmButtons = ({
 }) => {
   return (
     <div className={styles.modal__button_container}>
-      <button onClick={onCancel} сlassName={styles.modal__button}>
-        {cancelText}
-      </button>
       <button onClick={onConfirm} className={styles.modal__button}>
         {confirmText}
+      </button>
+      <button onClick={onCancel} className={styles.modal__button}>
+        {cancelText}
       </button>
     </div>
   );

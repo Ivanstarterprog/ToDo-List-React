@@ -2,7 +2,7 @@ import NoTasksCard from "@components/NoTasksCard";
 import TaskCard from "@components/TaskCard";
 import styles from "./TaskList.module.css";
 
-export const TaskList = ({ tasks, onDeleteTask }) => {
+export const TaskList = ({ tasks, onDeleteTask, onEditTask }) => {
   if (!tasks || tasks.length === 0) {
     return <NoTasksCard />;
   }
@@ -10,7 +10,12 @@ export const TaskList = ({ tasks, onDeleteTask }) => {
     return (
       <div className={styles.tasks}>
         {tasks.map((task) => (
-          <TaskCard key={task.id} task={task} onDeleteTask={onDeleteTask} />
+          <TaskCard
+            key={task.id}
+            task={task}
+            onDeleteTask={onDeleteTask}
+            onEditTask={onEditTask}
+          />
         ))}
       </div>
     );

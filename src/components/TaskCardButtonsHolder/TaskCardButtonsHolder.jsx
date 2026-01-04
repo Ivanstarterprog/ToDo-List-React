@@ -4,7 +4,7 @@ import shareImage from "@assets/img/share.svg";
 import informationImage from "@assets/img/information.svg";
 import editImage from "@assets/img/edit.svg";
 
-export const TaskCardButtonsHolder = ({ isVisible }) => {
+export const TaskCardButtonsHolder = ({ isVisible, onEditClick }) => {
   return (
     <div
       className={`${styles.task__card__buttons_container} ${
@@ -22,6 +22,7 @@ export const TaskCardButtonsHolder = ({ isVisible }) => {
         ></TaskCardButton>
         <TaskCardButton
           image={editImage}
+          onClick={onEditClick}
           image_alt="Изменить задачу"
         ></TaskCardButton>
       </div>

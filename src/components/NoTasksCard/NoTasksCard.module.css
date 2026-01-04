@@ -1,6 +1,7 @@
 @import "@/shared/styles/vars.css";
 
 .tasks__no_tasks {
+  height: 100%;
   margin-top: 100px;
   font-size: var(--all-task-done-text-size);
   color: var(--alert-text-color);

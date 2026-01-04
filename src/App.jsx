@@ -1,11 +1,15 @@
 import AddTaskForm from "@components/AddTaskForm";
+import ShareModal from "@components/ShareModal";
+import TaskList from "@components/TaskList";
 import useConfirmModal from "@hooks/useConfirmModal";
+import useShareModal from "@hooks/useShareModal";
 import Task from "@entities/task";
 import { useEffect, useState } from "react";
-import TaskList from "./components/TaskList";
 function App() {
   const [tasks, setTasks] = useState([]);
   const { confirm, ConfirmModal } = useConfirmModal();
+  const { isOpen, taskTitle, taskBody, openShare, closeShare } =
+    useShareModal();
 
   useEffect(() => {
     const savedTasks = localStorage.getItem("tasks");
@@ -48,8 +52,6 @@ function App() {
       "Отменить",
       "Сохранить"
     );
-    console.log(taskToBeChanged);
-    console.log(updatedTaskData);
     if (!updatedTaskData) {
       return;
     }
@@ -61,13 +63,25 @@ function App() {
     );
   };
 
+  const handleShareTask = (task) => {
+    console.log(task);
+    openShare(task);
+  };
+
   return (
     <main>
       <ConfirmModal />
+      <ShareModal
+        isOpen={isOpen}
+        onClose={closeShare}
+        taskTitle={taskTitle}
+        taskBody={taskBody}
+      />
       <TaskList
         tasks={tasks}
         onDeleteTask={handleDeleteTask}
         onEditTask={handleEditTask}
+        onShareTask={handleShareTask}
       />
       <AddTaskForm onAddTask={handleAddTask} />
     </main>

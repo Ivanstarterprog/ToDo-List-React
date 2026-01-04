@@ -3,7 +3,7 @@ import TaskCardInformation from "@components/TaskCardInformation";
 import DeleteTaskButton from "@components/DeleteTaskButton";
 import TaskCardButtonsHolder from "@components/TaskCardButtonsHolder";
 import { useState, useRef, useEffect } from "react";
-export const TaskCard = ({ task, onDeleteTask, onEditTask }) => {
+export const TaskCard = ({ task, onDeleteTask, onEditTask, onShareTask }) => {
   const [isButtonsVisible, setIsButtonsVisible] = useState(false);
   const cardRef = useRef(null);
 
@@ -45,8 +45,10 @@ export const TaskCard = ({ task, onDeleteTask, onEditTask }) => {
         </div>
       </div>
       <TaskCardButtonsHolder
+        task={task}
         onEditClick={handleEditTask}
         isVisible={isButtonsVisible}
+        onShareTask={onShareTask}
       ></TaskCardButtonsHolder>
     </div>
   );

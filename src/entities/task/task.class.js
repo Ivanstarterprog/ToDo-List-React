@@ -43,7 +43,7 @@ export class Task {
     this.description = newFullDescription;
   }
 
-  setTaskNewData(taskData) {
+  setTaskData(taskData) {
     this.setTaskTitle(taskData.title);
     this.setTaskBody(taskData.body);
     this.setTaskDescription(taskData.description);

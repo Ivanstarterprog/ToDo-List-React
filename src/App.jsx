@@ -25,7 +25,6 @@ function App() {
   }, []);
 
   useEffect(() => {
-    if (tasks.length === 0) return;
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
 
@@ -56,9 +55,14 @@ function App() {
       return;
     }
 
+    const updatedTask = Task.objectToTask({
+      ...taskToBeChanged,
+      ...updatedTaskData,
+    });
+
     setTasks((prevTasks) =>
       prevTasks.map((task) =>
-        task.id === taskToBeChanged.id ? updatedTaskData : task
+        task.id === taskToBeChanged.id ? updatedTask : task
       )
     );
   };

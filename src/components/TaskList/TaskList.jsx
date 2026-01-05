@@ -6,18 +6,17 @@ export const TaskList = ({ tasks, onDeleteTask, onEditTask, onShareTask }) => {
   if (!tasks || tasks.length === 0) {
     return <NoTasksCard />;
   }
-  if (tasks)
-    return (
-      <div className={styles.tasks}>
-        {tasks.map((task) => (
-          <TaskCard
-            key={task.id}
-            task={task}
-            onDeleteTask={onDeleteTask}
-            onEditTask={onEditTask}
-            onShareTask={onShareTask}
-          />
-        ))}
-      </div>
-    );
+  return (
+    <div className={styles.tasks}>
+      {tasks.map((task) => (
+        <TaskCard
+          key={task.id}
+          task={task}
+          onDeleteTask={onDeleteTask}
+          onEditTask={onEditTask}
+          onShareTask={onShareTask}
+        />
+      ))}
+    </div>
+  );
 };
